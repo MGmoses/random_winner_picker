@@ -4,6 +4,7 @@ const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const dotenv = require('dotenv');
 const autoprefixer = require('autoprefixer');
+const sass = require('sass');
 const baseWebpackConfig = require('./webpack.base.conf');
 const getClientEnvironment = require('./utils/env');
 
@@ -36,10 +37,15 @@ module.exports = merge(baseWebpackConfig, {
     host: '0.0.0.0',
     port: 8888,
     watchFiles: ['src/**/*'],
+    allowedHosts: 'all',
     client: {
       overlay: {
         warnings: false,
         errors: true
+      },
+      webSocketURL: {
+        hostname: '0.0.0.0',
+        port: 0
       }
     }
   },
@@ -92,6 +98,7 @@ module.exports = merge(baseWebpackConfig, {
           {
             loader: 'sass-loader',
             options: {
+              implementation: sass,
               sourceMap: true
             }
           }

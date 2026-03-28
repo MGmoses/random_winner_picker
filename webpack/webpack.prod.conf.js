@@ -5,6 +5,7 @@ const { merge } = require('webpack-merge');
 const dotenv = require('dotenv');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
+const sass = require('sass');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WorkboxPlugin = require('workbox-webpack-plugin');
@@ -115,7 +116,10 @@ module.exports = merge(baseWebpackConfig, {
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              implementation: sass
+            }
           }
         ]
       }
