@@ -15,7 +15,7 @@
   },
   "author": "Ice Lam",
   "license": "MIT",
-  "homepage": "https://MGmoses.github.io/",
+  "homepage": "https://mgmoses.github.io/random_winner_picker/",
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
